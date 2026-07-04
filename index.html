@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Forever ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html,body{
+
+width:100%;
+height:100%;
+overflow:hidden;
+
+font-family:Poppins,sans-serif;
+
+background:#000;
+
+}
+
+#bgVideo{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+z-index:-2;
+
+}
+
+.overlay{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,.45);
+
+z-index:-1;
+
+}
+
+.page{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+padding:25px;
+
+}
+
+.page.active{
+
+display:flex;
+
+animation:fade .7s;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:scale(.95);
+
+}
+
+to{
+
+opacity:1;
+transform:scale(1);
+
+}
+
+}
+
+.card{
+
+width:100%;
+max-width:720px;
+
+padding:30px;
+
+border-radius:25px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(18px);
+
+text-align:center;
+
+color:white;
+
+}
+
+h1{
+
+font-family:"Great Vibes";
+
+font-size:65px;
+
+margin-bottom:15px;
+
+}
+
+.gif{
+
+width:220px;
+height:220px;
+
+margin:auto;
+
+border-radius:20px;
+
+object-fit:cover;
+
+display:block;
+
+border:4px solid rgba(255,255,255,.4);
+
+}
+
+.text{
+
+margin-top:18px;
+
+font-size:19px;
+
+line-height:1.8;
+
+}
+
+.key{
+
+width:90px;
+height:90px;
+
+margin:30px auto 8px;
+
+background:white;
+
+color:#222;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:48px;
+
+font-weight:bold;
+
+border-radius:18px;
+
+cursor:pointer;
+
+box-shadow:0 10px #c9c9c9;
+
+transition:.15s;
+
+}
+
+.key:active{
+
+transform:translateY(8px);
+
+box-shadow:0 2px #c9c9c9;
+
+}
+
+.hint{
+
+font-size:13px;
+
+opacity:.8;
+
+}
+
+/* Envelope */
+
+#transition{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(0,0,0,.45);
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.4s;
+
+z-index:999;
+
+}
+
+#transition.show{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+.envelope{
+
+width:270px;
+
+height:170px;
+
+position:relative;
+
+background:#f7d2d2;
+
+border-radius:0 0 12px 12px;
+
+}
+
+.flap{
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:0;
+height:0;
+
+border-left:135px solid transparent;
+
+border-right:135px solid transparent;
+
+border-top:85px solid #efb8b8;
+
+transform-origin:top;
+
+transition:.7s;
+
+}
+
+.envelope.open .flap{
+
+transform:rotateX(180deg);
+
+}
+
+.letter{
+
+position:absolute;
+
+left:15px;
+right:15px;
+
+bottom:10px;
+
+height:120px;
+
+background:white;
+
+border-radius:10px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:28px;
+
+transform:translateY(45px);
+
+transition:.7s;
+
+}
+
+.envelope.open .letter{
+
+transform:translateY(-95px);
+
+}
+
+/* ===== PART 2 STARTS ===== */
+
+</style>
+
+</head>
+
+<body>
+
+<video
+id="bgVideo"
+autoplay
+loop
+muted
+playsinline>
+
+<source
+src="assets/background.mp4"
+type="video/mp4">
+
+</video>
+
+<div class="overlay"></div>
+
+<div id="transition">
+
+<div class="envelope">
+
+<div class="flap"></div>
+
+<div class="letter">
+
+💌
+
+</div>
+
+</div>
+
+</div>
+<!-- ===========================
+PAGE 1
+=========================== -->
+
+<section class="page active" id="page1">
+
+<div class="card">
+
+<h1>Love Begins</h1>
+
+<img src="images/page1.gif" class="gif">
+
+<p class="text">
+
+Every beautiful story begins with a single moment.
+
+Mine began when I met you.
+
+</p>
+
+<div class="key" onclick="nextPage()">
+
+L
+
+</div>
+
+<div class="hint">
+
+Press L To Continue
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================
+PAGE 2
+=========================== -->
+
+<section class="page" id="page2">
+
+<div class="card">
+
+<h1>Only You</h1>
+
+<img src="images/page2.gif" class="gif">
+
+<p class="text">
+
+Among billions of people,
+
+my heart still chose only you.
+
+</p>
+
+<div class="key" onclick="nextPage()">
+
+O
+
+</div>
+
+<div class="hint">
+
+Press O To Continue
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================
+PAGE 3
+=========================== -->
+
+<section class="page" id="page3">
+
+<div class="card">
+
+<h1>Very Special</h1>
+
+<img src="images/page3.gif" class="gif">
+
+<p class="text">
+
+Every smile.
+
+Every hug.
+
+Every memory with you
+
+is my favorite memory.
+
+</p>
+
+<div class="key" onclick="nextPage()">
+
+V
+
+</div>
+
+<div class="hint">
+
+Press V To Continue
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===== PART 3 STARTS HERE ===== -->
+<!-- ===========================
+PAGE 4
+=========================== -->
+
+<section class="page" id="page4">
+
+<div class="card">
+
+<h1>Endless Love</h1>
+
+<img src="images/page4.gif" class="gif">
+
+<p class="text">
+
+No matter where life takes us,
+
+I promise...
+
+I'll always choose you,
+
+today,
+
+tomorrow,
+
+and forever.
+
+</p>
+
+<div class="key" onclick="nextPage()">
+
+E
+
+</div>
+
+<div class="hint">
+
+Press E To Continue
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================
+PAGE 5
+=========================== -->
+
+<section class="page" id="page5">
+
+<div class="card">
+
+<h1>Forever ❤️</h1>
+
+<img src="images/final.gif" class="gif">
+
+<p class="text">
+
+Thank you for coming into my life.
+
+You turned ordinary days
+
+into unforgettable memories.
+
+I Love You Forever.
+
+</p>
+
+<div class="key">
+
+U
+
+</div>
+
+<div class="hint">
+
+Forever & Always ❤️
+
+</div>
+
+<br>
+
+<h3>@ajayyy</h3>
+
+</div>
+
+</section>
+
+<script>
+
+const pages=document.querySelectorAll(".page");
+
+let current=0;
+
+function nextPage(){
+
+transition.classList.add("show");
+
+setTimeout(()=>{
+
+document.querySelector(".envelope").classList.add("open");
+
+},100);
+
+setTimeout(()=>{
+
+pages[current].classList.remove("active");
+
+current++;
+
+if(current<pages.length){
+
+pages[current].classList.add("active");
+
+}
+
+document.querySelector(".envelope").classList.remove("open");
+
+transition.classList.remove("show");
+
+},1100);
+
+}
+
+/* ===== PART 4 STARTS HERE ===== */
+/* Keyboard Support */
+
+document.addEventListener("keydown",(e)=>{
+
+const keys=["l","o","v","e"];
+
+if(current>=4) return;
+
+if(e.key.toLowerCase()==keys[current]){
+
+nextPage();
+
+}
+
+});
+
+/* Prevent Double Click During Animation */
+
+let locked=false;
+
+const oldNext=nextPage;
+
+nextPage=function(){
+
+if(locked) return;
+
+locked=true;
+
+transition.classList.add("show");
+
+setTimeout(()=>{
+
+document.querySelector(".envelope").classList.add("open");
+
+},100);
+
+setTimeout(()=>{
+
+pages[current].classList.remove("active");
+
+current++;
+
+if(current<pages.length){
+
+pages[current].classList.add("active");
+
+}
+
+document.querySelector(".envelope").classList.remove("open");
+
+transition.classList.remove("show");
+
+locked=false;
+
+},1100);
+
+};
+
+</script>
+
+</body>
+
+ </html>

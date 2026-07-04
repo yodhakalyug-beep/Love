@@ -10,6 +10,27 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
+#playBtn{
+position:absolute;
+top:20px;
+right:20px;
+padding:10px 18px;
+border:none;
+border-radius:30px;
+background:rgba(255,255,255,.18);
+color:#fff;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+backdrop-filter:blur(10px);
+transition:.3s;
+}
+
+#playBtn:hover{
+transform:scale(1.08);
+background:rgba(255,255,255,.28);
+}
+
 <style>
 
 *{
@@ -213,7 +234,6 @@ visibility:hidden;
 transition:.4s;
 
 z-index:9999;
-  }
 
 #transition.show{
 
@@ -345,7 +365,9 @@ PAGE 1
 <section class="page active" id="page1">
 
 <div class="card">
-
+<button id="playBtn" onclick="startVideo()">
+▶ Play
+</button>
 <h1>Love Begins</h1>
 
 <img src="images/page1.gif" class="gif">
@@ -539,12 +561,23 @@ Forever & Always ❤️
 
 </section>
 
+function startVideo(){
+
+const video=document.getElementById("bgVideo");
+
+video.muted=false;
+
+video.play();
+
+document.getElementById("playBtn").style.display="none";
+
+}
+
 <script>
 
 const pages=document.querySelectorAll(".page");
 
 const transition=document.getElementById("transition");
-  let current = 0;
 
 function nextPage(){
 
@@ -639,4 +672,4 @@ locked=false;
 
 </body>
 
- </html>
+  </html>

@@ -26,10 +26,6 @@ backdrop-filter:blur(10px);
 transition:.3s;
 }
 
-#playBtn:hover{
-transform:scale(1.08);
-background:rgba(255,255,255,.28);
-}
 
 <style>
 
@@ -319,6 +315,11 @@ transition:.7s;
 transform:translateY(-95px);
 
 }
+#playBtn:hover{
+transform:scale(1.08);
+background:rgba(255,255,255,.28);
+}
+
 
 /* ===== PART 2 STARTS ===== */
 
@@ -561,6 +562,9 @@ Forever & Always ❤️
 
 </section>
 
+
+<script>
+
 function startVideo(){
 
 const video=document.getElementById("bgVideo");
@@ -573,11 +577,12 @@ document.getElementById("playBtn").style.display="none";
 
 }
 
-<script>
 
 const pages=document.querySelectorAll(".page");
 
 const transition=document.getElementById("transition");
+
+let current=0;
 
 function nextPage(){
 
@@ -652,9 +657,9 @@ pages[current].classList.remove("active");
 
 current++;
 
-if(current<pages.length){
+if(current < pages.length){
 
-pages[current].classList.add("active");
+    pages[current].classList.add("active");
 
 }
 
@@ -672,4 +677,4 @@ locked=false;
 
 </body>
 
-  </html>
+</html>

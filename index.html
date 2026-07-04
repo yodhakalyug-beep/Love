@@ -565,6 +565,13 @@ Forever & Always ❤️
 
 <script>
 
+
+const pages=document.querySelectorAll(".page");
+
+const transition=document.getElementById("transition");
+
+let current=0;
+
 function startVideo(){
 
 const video=document.getElementById("bgVideo");
@@ -576,13 +583,6 @@ video.play();
 document.getElementById("playBtn").style.display="none";
 
 }
-
-
-const pages=document.querySelectorAll(".page");
-
-const transition=document.getElementById("transition");
-
-let current=0;
 
 function nextPage(){
 
